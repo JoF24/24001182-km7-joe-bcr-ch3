@@ -16,7 +16,7 @@ exports.createCars = (data) => {
     cars.push(newCars);
 
     fs.writeFileSync(
-        "../24001182-km7-joe-bcr-ch3/data/cars.json",
+        "../data/cars.json",
         JSON.stringify(cars, null, 4),
         "utf-8"
     );
@@ -33,7 +33,7 @@ exports.updateCars = (id, data) => {
     Object.assign(searchCars, data);
 
     fs.writeFileSync(
-        "../24001182-km7-joe-bcr-ch3/data/cars.json",
+        "../data/cars.json",
         JSON.stringify(cars, null, 4),
         "utf-8"
     );
@@ -51,7 +51,7 @@ exports.deleteCarsbyId = (id) => {
     const deletedCars = cars.splice(carsIndex, 1);
 
     fs.writeFileSync(
-        "../24001182-km7-joe-bcr-ch3/data/cars.json",
+        "../data/cars.json",
         JSON.stringify(cars, null, 4),
         "utf-8"
     );
