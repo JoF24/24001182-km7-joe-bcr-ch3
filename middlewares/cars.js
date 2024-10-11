@@ -70,7 +70,7 @@ exports.validateUpdateCars = (req, res, next) => {
 
     const resultValidateParams = validateParams.safeParse(req.params);
     if (!resultValidateParams.success) {
-        throw new BadRequestError(result.error.errors);
+        throw new BadRequestError(resultValidateParams.error.errors);
     }
 
     req.body ={
@@ -100,7 +100,7 @@ exports.validateUpdateCars = (req, res, next) => {
     });
 
     const validateFileBody = z.object({
-        profilePicture: z.object({
+        image: z.object({
             name : z.string(),
             data : z.any(),
         })
@@ -111,7 +111,7 @@ exports.validateUpdateCars = (req, res, next) => {
     const resultValidateBody = validateBody.safeParse(req.body);
     if (!resultValidateBody.success) {
         // If validation fails, return error messages
-        throw new BadRequestError(result.error.errors);
+        throw new BadRequestError(resultValidateBody.error.errors);
     };
 
     if(req.files){
