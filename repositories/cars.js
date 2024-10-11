@@ -16,7 +16,7 @@ exports.createCars = (data) => {
     cars.push(newCars);
 
     fs.writeFileSync(
-        "../data/cars.json",
+        "./data/cars.json",
         JSON.stringify(cars, null, 4),
         "utf-8"
     );
